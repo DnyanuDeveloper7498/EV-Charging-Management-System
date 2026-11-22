@@ -1,0 +1,811 @@
+
+/* ========================================
+   CHARGING SESSION - GLOBAL LAYOUT
+======================================== */
+
+.session-page {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+}
+
+.session-card {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e5eaf0;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+  box-sizing: border-box;
+}
+
+.session-card h3 {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.card-desc {
+  margin: 12px 0 22px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   SESSION ICONS
+======================================== */
+
+.session-icon,
+.complete-icon {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 18px;
+  background: var(--green-light, #dcfce7);
+  font-size: 30px;
+}
+
+.complete-icon {
+  color: var(--green, #15803d);
+  font-size: 34px;
+  font-weight: 900;
+}
+
+/* ========================================
+   START CHARGING / BOOKING REQUIRED
+======================================== */
+
+.session-card:not(:has(.charging-panel, .complete-icon))
+  > h3 {
+  overflow-wrap: anywhere;
+}
+
+.session-card > .btn-primary.btn-block,
+.session-card > .btn-block {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 750;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.session-card > .btn-block:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.session-card > .btn-block:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   ACTIVE CHARGING STATUS
+======================================== */
+
+.session-card:has(.charging-panel) {
+  padding: 26px;
+}
+
+.charging-panel {
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  background: linear-gradient(135deg, #1a2333, #0f172a);
+  border: 1px solid #263449;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.charging-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.14);
+  color: #86efac;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.charging-panel p {
+  margin: 14px 0 0;
+  color: #dbe4ef;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   SESSION INFORMATION CARDS
+======================================== */
+
+.session-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 22px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.session-info > div {
+  min-width: 0;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.session-info span {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.session-info b {
+  display: block;
+  max-width: 100%;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Instructions Below Session Information */
+
+.session-card:has(.charging-panel) > .card-desc {
+  margin: 0 0 20px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Stop Charging Main Button */
+
+.session-card:has(.charging-panel) > .btn-danger {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 750;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.session-card:has(.charging-panel) > .btn-danger:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.session-card:has(.charging-panel) > .btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   CHARGING COMPLETE
+======================================== */
+
+.session-card:has(.complete-icon) {
+  padding: 28px;
+}
+
+.session-card:has(.complete-icon) > h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* Result Cards */
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 26px 0;
+}
+
+.result-grid > div {
+  min-width: 0;
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.result-grid span {
+  display: block;
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.result-grid b {
+  display: block;
+  color: #15803d;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Complete Screen Buttons */
+
+.result-actions {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.result-actions .btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 11px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.result-actions .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   STOP CHARGING MODAL OVERLAY
+======================================== */
+
+.charging-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Modal Box */
+
+.charging-modal {
+  width: 100%;
+  max-width: 440px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  box-sizing: border-box;
+  animation: chargingModalIn 0.22s ease-out;
+}
+
+/* Modal Header */
+
+.charging-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid #edf0f3;
+}
+
+.charging-modal-header h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.charging-modal-header p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Close Button */
+
+.modal-close {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal Body */
+
+.charging-modal-body {
+  padding: 22px 24px;
+}
+
+/* Battery Summary */
+
+.battery-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.battery-summary > div {
+  min-width: 0;
+  padding: 16px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.battery-summary span {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.battery-summary strong {
+  display: block;
+  color: #15803d;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* Battery Input */
+
+.charging-modal-body label {
+  display: block;
+  margin-bottom: 9px;
+  color: #1e293b;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.charging-modal-body input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  outline: none;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.charging-modal-body input:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+.charging-modal-body input:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.charging-modal-body small {
+  display: block;
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Modal Action Buttons */
+
+.charging-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px 22px;
+  border-top: 1px solid #edf0f3;
+}
+
+.charging-modal-actions .btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.charging-modal-actions .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   MODAL ANIMATION
+======================================== */
+
+@keyframes chargingModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 650px) {
+  .session-card:has(.complete-icon) {
+    padding: 22px;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .result-grid > div:last-child {
+    grid-column: 1 / -1;
+    min-height: 86px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 550px) {
+  .session-page {
+    padding-bottom: 20px;
+  }
+
+  .session-card,
+  .session-card:has(.charging-panel) {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .session-card h3 {
+    font-size: 19px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .session-icon,
+  .complete-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    font-size: 27px;
+  }
+
+  .charging-panel {
+    padding: 18px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+  }
+
+  .charging-panel p {
+    font-size: 13px;
+  }
+
+  .session-info {
+    gap: 9px;
+    margin-bottom: 18px;
+  }
+
+  .session-info > div {
+    min-height: 86px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .session-info span {
+    margin-bottom: 7px;
+    font-size: 11px;
+  }
+
+  .session-info b {
+    font-size: 13px;
+  }
+
+  .session-card:has(.complete-icon) > h3 {
+    font-size: 21px;
+  }
+
+  .result-grid {
+    margin: 20px 0;
+    gap: 10px;
+  }
+
+  .result-grid > div {
+    min-height: 100px;
+    padding: 14px 12px;
+  }
+
+  .result-grid span {
+    font-size: 11px;
+  }
+
+  .result-grid b {
+    font-size: 16px;
+  }
+
+  .result-actions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .result-actions .btn {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+
+  /* Mobile Stop Modal */
+
+  .charging-modal-overlay {
+    padding: 14px;
+  }
+
+  .charging-modal {
+    max-width: 100%;
+    max-height: calc(100vh - 28px);
+    max-height: calc(100dvh - 28px);
+    border-radius: 16px;
+  }
+
+  .charging-modal-header {
+    padding: 18px 18px 15px;
+  }
+
+  .charging-modal-header h3 {
+    font-size: 19px;
+  }
+
+  .charging-modal-body {
+    padding: 18px;
+  }
+
+  .battery-summary {
+    gap: 9px;
+    margin-bottom: 20px;
+  }
+
+  .battery-summary > div {
+    padding: 14px 8px;
+  }
+
+  .battery-summary strong {
+    font-size: 22px;
+  }
+
+  .charging-modal-actions {
+    gap: 10px;
+    padding: 14px 18px 18px;
+  }
+
+  .charging-modal-actions .btn {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 8px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+  .session-card:has(.complete-icon) {
+    padding: 18px;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-grid > div,
+  .result-grid > div:last-child {
+    grid-column: auto;
+    min-height: 78px;
+    padding: 14px 16px;
+  }
+
+  .result-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .result-actions .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 7px;
+    font-size: 12px;
+    white-space: normal;
+  }
+}
+
+/* Extra Narrow Screens */
+
+@media (max-width: 350px) {
+  .session-info {
+    grid-template-columns: 1fr;
+  }
+
+  .session-info > div {
+    min-height: 72px;
+  }
+
+  .result-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .charging-modal-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .charging-modal-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   SHORT SCREENS
+======================================== */
+
+@media (max-height: 500px) {
+  .charging-modal-overlay {
+    align-items: flex-start;
+  }
+
+  .charging-modal-header {
+    padding-top: 14px;
+  }
+
+  .charging-modal-body {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .battery-summary {
+    margin-bottom: 16px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .charging-modal,
+  .result-actions .btn,
+  .session-card > .btn-block,
+  .session-card:has(.charging-panel) > .btn-danger {
+    animation: none;
+    transition: none;
+  }
+}

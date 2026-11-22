@@ -1,0 +1,9 @@
+.policy { max-width: 800px; }
+.policy h1 { margin-bottom: 4px; }
+.policy section { margin-top: 24px; }
+.policy h3 { margin: 0 0 6px; font-size: 17px; }
+.policy p { color: var(--gray-mid); line-height: 1.75; margin: 0; }
+.policy .muted { color: var(--gray); font-size: 13px; margin-top: 4px; }
+.policy-nav { display: flex; gap: 8px; margin-bottom: 22px; }
+.policy-nav a { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 999px; font-weight: 700; font-size: 13px; background: #fff; }
+.policy-nav a.active { background: var(--green); border-color: var(--green); color: #fff; }

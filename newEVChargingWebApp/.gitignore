@@ -1,0 +1,22 @@
+# Secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+
+# Java
+target/
+*.class
+
+# React
+node_modules/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log

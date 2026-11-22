@@ -1,0 +1,6 @@
+/* Compatibility entry: single source of truth for global styles.
+   The old per-partial imports (header/home/feature-card/stats/footer)
+   were removed because they duplicated and randomly overrode the
+   real page-level CSS (Home.css, Header.css, etc.) depending on
+   module load order — that was the main source of the broken look. */
+@import './main.css';

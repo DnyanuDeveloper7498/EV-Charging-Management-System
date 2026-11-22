@@ -1,0 +1,24 @@
+.auth-page { min-height: calc(100vh - 68px); display: grid; grid-template-columns: 1fr 1fr; background: linear-gradient(135deg, #eefaf2, #f8fbf9); }
+.auth-showcase { position: relative; display: flex; flex-direction: column; justify-content: center; padding: 70px clamp(25px, 7vw, 90px); background: radial-gradient(circle at 15% 15%, #1a2333, var(--dark) 55%); color: #fff; overflow: hidden; }
+.auth-showcase::after { content: ""; position: absolute; width: 340px; height: 340px; right: -120px; bottom: -140px; background: radial-gradient(circle, rgba(74, 222, 128, .25), transparent 70%); pointer-events: none; }
+.showcase-icon { font-size: 48px; color: var(--green-mint); filter: drop-shadow(0 6px 18px rgba(74, 222, 128, .35)); }
+.auth-showcase h1 { font-size: 42px; margin: 10px 0 4px; }
+.auth-showcase h1 span { color: var(--green-mint); }
+.auth-showcase strong { color: var(--green-mint); }
+.auth-showcase p { max-width: 470px; color: #cbd5e1; line-height: 1.7; }
+.showcase-points { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; color: #e5e7eb; font-size: 13px; position: relative; }
+.auth-form-wrap { display: flex; align-items: center; justify-content: center; padding: 35px; }
+.auth-card { background: #fff; width: min(100%, 430px); padding: 34px; border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 20px 55px rgba(17, 24, 39, .12); }
+.auth-card h2 { margin: 0 0 5px; font-size: 25px; }
+.auth-sub { margin: 0 0 22px; color: var(--gray); font-size: 13px; }
+.auth-submit { margin-top: 6px; padding: 13px; font-size: 15px; }
+.auth-switch { text-align: center; color: var(--gray); font-size: 13px; margin: 20px 0 0; }
+.auth-switch a { color: var(--green); font-weight: 800; text-decoration: none; }
+.auth-switch a:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+    .auth-page { grid-template-columns: 1fr; }
+    .auth-showcase { padding: 38px 24px; }
+    .showcase-points { display: none; }
+    .auth-showcase h1 { font-size: 34px; }
+    .auth-form-wrap { padding: 24px 14px; }
+}

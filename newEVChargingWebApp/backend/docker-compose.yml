@@ -1,0 +1,30 @@
+# Local full stack:  docker compose up --build
+# Copy .env.example to .env first and fill the values.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ev_charging_system
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ev_charging_system"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/ev_charging_system
+      DB_USERNAME: postgres
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:

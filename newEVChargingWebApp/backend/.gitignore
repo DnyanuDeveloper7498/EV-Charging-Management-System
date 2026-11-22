@@ -1,0 +1,9 @@
+target/
+.idea/
+.settings/
+.classpath
+.project
+*.iml
+.env
+db.properties
+application-local.properties

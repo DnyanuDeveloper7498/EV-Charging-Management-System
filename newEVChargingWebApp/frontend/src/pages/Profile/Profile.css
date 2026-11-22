@@ -1,0 +1,9 @@
+.profile-grid { display: grid; grid-template-columns: 280px 1fr; gap: 22px; align-items: start; }
+.profile-summary { text-align: center; }
+.profile-summary h3 { margin: 12px 0 2px; }
+.profile-summary p { margin: 4px 0; color: var(--gray); font-size: 13px; word-break: break-all; }
+.profile-summary .muted { font-size: 12px; }
+.avatar { width: 76px; height: 76px; border-radius: 50%; margin: 0 auto; display: grid; place-items: center; font-size: 32px; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--green), var(--green-mint)); }
+.profile-forms { display: flex; flex-direction: column; gap: 22px; }
+.profile-forms h3 { margin: 0 0 14px; }
+@media (max-width: 800px) { .profile-grid { grid-template-columns: 1fr; } }

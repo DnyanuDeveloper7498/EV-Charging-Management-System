@@ -1,0 +1,10 @@
+ALTER TABLE bookings
+ADD COLUMN IF NOT EXISTS cancelled_at TIMESTAMP,
+ADD COLUMN IF NOT EXISTS cancellation_type VARCHAR(30),
+ADD COLUMN IF NOT EXISTS cancellation_reason VARCHAR(255),
+ADD COLUMN IF NOT EXISTS refund_status VARCHAR(30)
+DEFAULT 'NOT_APPLICABLE';
+
+UPDATE bookings
+SET refund_status = 'NOT_APPLICABLE'
+WHERE refund_status IS NULL;

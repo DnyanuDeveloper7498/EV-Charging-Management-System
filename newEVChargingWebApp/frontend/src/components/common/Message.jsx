@@ -1,0 +1,1 @@
+import React from "react";import "./Message.css";export default function Message({text,type="error"}){return text?<div className={`message ${type}`}>{text}</div>:null}

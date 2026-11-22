@@ -1,0 +1,16 @@
+.vehicle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.vehicle-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 22px; box-shadow: 0 4px 14px rgba(17, 24, 39, .05); transition: transform .2s ease, box-shadow .2s ease; }
+.vehicle-card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(17, 24, 39, .08); }
+.vehicle-top { display: flex; justify-content: space-between; gap: 15px; align-items: flex-start; }
+.vehicle-top h3 { font-size: 17px; margin: 0 0 4px; }
+.vehicle-top p { color: var(--gray); font-size: 12px; margin: 0; }
+.vehicle-top strong { font-size: 20px; }
+.battery-track { height: 11px; background: #e5e7eb; border-radius: 99px; overflow: hidden; margin: 19px 0 15px; }
+.battery-fill { height: 100%; border-radius: 99px; transition: width .3s ease; }
+.vehicle-meta { display: flex; justify-content: space-between; gap: 10px; color: var(--gray); font-size: 12px; margin-bottom: 16px; }
+.vehicle-meta b { color: var(--dark); }
+.text-link { border: 0; background: none; color: var(--green); font-weight: 800; cursor: pointer; }
+.text-link:hover { text-decoration: underline; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 10px; }
+@media (max-width: 850px) { .vehicle-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .vehicle-grid { grid-template-columns: 1fr; } .vehicle-meta { flex-direction: column; } }
